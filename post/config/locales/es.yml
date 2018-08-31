@@ -1,0 +1,15 @@
+es:
+  errors:
+    messages:
+      blank: "no puede estar en blanco"
+      invalid: "es inválido"
+      too_short: "Demasiado corto (250 caracteres mínimo)"
+      required: "Requerido"
+
+  activerecord:
+      attributes:
+        posting:
+          title: "Título"
+          body: "Cuerpo"
+          user: "Usuario"
+        

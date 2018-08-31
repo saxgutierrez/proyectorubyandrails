@@ -1,0 +1,38 @@
+<div class="container mt-5">
+	<div class="row">
+		<div class="col-6 offset-3">
+			<!-- Start:formulario de creación de Nuevo Post -->
+			<h1><%= form_title%></h1>
+			<!-- start: errores de validacion de creación de Nuevo Post -->
+			<% if @posting.errors.any? %>
+			  <div class="alert alert-danger alert-dismissable fade show">
+			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			        <span aria-hidden="true">&times;</span>
+			    </button>
+			    <ul>
+			    <% @posting.errors.full_messages.each do |msg| %>
+			      <li><%= msg %></li>
+			    <% end %>
+
+			    </ul>
+			  </div>
+			<% end %>
+			<!-- End:errores de validacion de creación de Nuevo Post -->
+			      <%= form_for @posting, url: {action: form_controller } do |f| %>
+			        <div class="form-group">
+			         <b><%= f.label :title, 'Título',class: "title" %></b>
+			         <%= f.text_field :title, class: "form-control form-control-lg", placeholder: "" %>
+			        </div>
+			        <div class="form-group">
+			          <b><%= f.label :body, 'Cuerpo',class: "title" %></b>
+			          <%= f.text_area :body, size: "60x8", class: "form-control form-control-lg", placeholder: "" %>
+			        </div>
+			        <div>
+			          <%= f.submit form_button , class: "btn btn-primary btn-lg" %>
+			        </div>
+			      <% end %>
+			<!-- End:formulario de creación de Nuevo Post -->
+		</div>
+	</div>
+</div>
+
