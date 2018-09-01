@@ -12,10 +12,17 @@ Rails.application.routes.draw do
 #rutas de posts  
   resources :posts, only: [:index, :new, :show, :create, :edit, :update, :destroy]  
 
+
+# devise_scope :user do
+#   resources :posts
+# end
+
 #crea la ruta para guardar los comentarios dentro de los recursos de posts
   resources :posts do
   	resources :comments, only: [:create]
   end
+
+
 
   # get 'posts#index' # funciona al ingresar en el navegador localhost:3000/post#index
 

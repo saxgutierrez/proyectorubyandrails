@@ -8,10 +8,11 @@
 		<p><%= markdown(@posting.body) %></p>
 		
 		<br><br>
+
+		
 		
 		<!-- Start: Listar comentarios -->
 		<% @posting.comments.each do |comment| %>
-
 		 <div class="card">
 		    <div class="card-header">
 				<p><span><%=comment.user.email%></span> hace aproximadamente <span><%=l(comment.created_at, format: "%FT%T")%></span> tiempo</p>
@@ -21,10 +22,25 @@
 		     	<%=comment.body%>
 		     </div>
 		 </div>
-
-		<% end %>
+		 <% end %>
 		<br>
 		 <!-- End: Listar comentarios -->
+
+		 <!-- Start: Hacer comentarios -->
+		 		<% if user_signed_in? %>
+		 		 <%= form_with(model: [ @posting, @posting.comments.build ], local: true) do |form| %> <!-- arreglar esto -->
+
+		 			 <div class="form-group">
+		 			 	<%= form.text_area :body, size: "60x2", class: "form-control", placeholder: "" %>	
+		 			 </div>
+
+		 			 <div class="">
+		 			 	<%= form.submit "Comentar", class: "btn btn-primary btn-lg" %>
+		 			 </div>
+
+		 		 <% end %>
+		 		<% end %>
+		  <!-- End: Hacer comentarios -->
 
 		</div>
 	</div>
