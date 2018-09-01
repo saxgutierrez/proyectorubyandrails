@@ -1,0 +1,15 @@
+<!-- Start: Hacer comentarios -->
+		<% if user_signed_in? %>
+		 <%= form_with(model:  [ @posting, @posting.comments.build ], local: true) do |form| %> <!-- arreglar esto -->
+
+			 <div class="form-group">
+			 	<%= form.text_area :body, size: "60x2", class: "form-control", placeholder: "" %>	
+			 </div>
+
+			 <div class="">
+			 	<%= form.submit "Comentar", class: "btn btn-primary btn-lg" %>
+			 </div>
+
+		 <% end %>
+		<% end %>
+ <!-- End: Hacer comentarios -->
