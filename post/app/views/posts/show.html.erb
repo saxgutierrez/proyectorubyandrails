@@ -28,13 +28,11 @@
 
 		 <!-- Start: Hacer comentarios -->
 		<% if user_signed_in? %>
-
-		<%= form_for([@posting, @posting.comments.build]) do |f| %>
-
-		<% end %>
-
+		
+		<%= render partial: 'comments/form' %>
 
 		<% end %>
+
 		 <!-- End: Hacer comentarios -->
 
 

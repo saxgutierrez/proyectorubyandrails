@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
 	<div class="row">
 		<div class="col-8 offset-2">
 
@@ -8,8 +8,8 @@
 			<p class="gray">publicado por <span><%=posting.user.email%></span> <span><%=time_ago_in_words(posting.created_at)%></span></p>
 			<p><%=markdown(posting.body.truncate(250))%></p>
 
-			<!-- Start:opciones de editar y eliminar para usuario autenticado -->
-			<% if user_signed_in? %>
+			<!-- Start:opciones de editar y eliminar para usuario autenticado y que le pertecesca el post -->
+			<% if (user_signed_in? && current_user.id == posting.user.id ) %>
 
 			<span><i class="fas fa-pencil-alt colorblue"></i></span><%= link_to "Editar", edit_post_path(posting),:class => 'pr-1' %>
 			<span><i class="fas fa-trash-alt colorblue"></i></span><%= link_to "Eliminar", post_path(posting), method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" },:class => 'pr-1' %>

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   #métodos que son solo accesibles para el usuario autenticado
   def index
   	@postings = Posting.all.order("created_at ASC")
-  	@users = User.all
+  	# @users = User.all
   end
 
   def show

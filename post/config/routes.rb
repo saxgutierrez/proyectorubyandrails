@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 #   resources :posts
 # end
 
-#crea la ruta para guardar los comentarios dentro de los recursos de posts
+#crea la ruta para guardar los comentarios dentro de los recursos de posts , posts_comments_path
   resources :posts do
   	resources :comments, only: [:create]
   end
