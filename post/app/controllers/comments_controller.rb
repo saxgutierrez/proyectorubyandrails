@@ -21,6 +21,6 @@ before_action :authenticate_user!
 
 	private
 	  def comments_params
-	    params.require(:comment).permit(:body).merge(user: current_user) #verificado devise utiliza el helper current_user
+	    params.require(:comment).permit(:body,:posting_id).merge(user: current_user) #verificado devise utiliza el helper current_user
 	  end
 end

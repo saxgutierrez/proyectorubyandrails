@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 
   def create
   	@posting = Posting.new(post_params)
-      @posting.user = current_user #helper creado
+      # @posting.user = current_user # no es necesario ya está en devise
   	if @posting.save
   		redirect_to posts_path, notice: "El post ha sido creado con éxito"
   	else
