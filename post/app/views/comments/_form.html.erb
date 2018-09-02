@@ -1,6 +1,6 @@
 	
 <!-- Especifico la ruta a donde va con url: post_comments_path(@posting) -->	
-<%= form_with(model: [ @posting, @posting.comments.build ],url: post_comments_path(@posting) , local: true) do |form| %>  <!-- arreglar esto -->
+<%= form_for([ @posting, @comments.build ],url: post_comments_path(@posting.id) , local: true) do |form| %>  <!-- arreglar esto -->
 
 	 <div class="form-group">
 	 	<%= form.text_area :body, size: "60x2", class: "form-control form-control-lg", placeholder: "" %>	

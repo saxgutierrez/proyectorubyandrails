@@ -5,6 +5,7 @@ es:
       invalid: "es inválido"
       too_short: "Demasiado corto (250 caracteres mínimo)"
       required: "Requerido"
+      confirmation: ""
 
   activerecord:
       attributes:

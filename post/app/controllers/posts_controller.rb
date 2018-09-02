@@ -8,7 +8,9 @@ class PostsController < ApplicationController
 
   def show
     @posting = Posting.find(params[:id])
-    # @posting.comment = post_comments
+    @comments = @posting.comments #comentarrios de un post en específico
+    
+    # puts " el id del post del momento es #{@posting.id}"
   end
 
   def new
@@ -40,7 +42,7 @@ class PostsController < ApplicationController
 
   def destroy
   	@posting = Posting.find(params[:id])
-  	@posting.destroy!
+  	@posting.destroy
   	redirect_to posts_path, notice: "El post ha sido eliminado con éxito"
   end
 

@@ -1,5 +1,9 @@
 <!-- Este es el más cercano a lo que se quiere -->
-<%= form_with(model: [ @posting, @posting.comments.build ],url: post_comments_path(@posting) , local: true) do |form| %>
+<%= form_with(model:[ @posting, @posting.comments.build ],url: post_comments_path(@posting) , local: true) do |form| %>
+
+<%= form_for([ @posting, @posting.comments.build ],url: post_comments_path(@posting) , local: true) do |form| %>
+
+<!-- ddsfds -->
 
 <%= form_for :comment, :url=> {:controller => 'comments', :action => 'create'} do |form| %>
 
