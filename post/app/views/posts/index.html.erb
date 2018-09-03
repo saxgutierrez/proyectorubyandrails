@@ -5,7 +5,7 @@
 		<% @postings.each do |posting| %>
 
 			<h1><%= link_to posting.title, post_path(posting), :class => '' %></h1>
-			<p class="gray">publicado por <span><%=posting.user.email%></span> <span><%=time_ago_in_words(posting.created_at)%></span></p>
+			<p class="gray">publicado por <span><%=posting.user.email%></span> hace <span><%=time_ago_in_words(posting.created_at)%></span></p>
 			<p><%=markdown(posting.body.truncate(250))%></p>
 
 			<!-- Start:opciones de editar y eliminar para usuario autenticado y que le pertecesca el post -->

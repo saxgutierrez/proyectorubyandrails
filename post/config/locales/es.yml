@@ -6,6 +6,7 @@ es:
       too_short: "Demasiado corto (250 caracteres mínimo)"
       required: "Requerido"
       confirmation: ""
+      taken: "ya registrado"
 
   activerecord:
       attributes:

@@ -4,7 +4,7 @@ before_action :authenticate_user!
 
 	def create
 
-	  @posting = Posting.find(params[:posting_id])
+	  @posting = Posting.find(params[:post_id])
 	  @comment = @posting.comments.create(comments_params)
 	    if @comment.save
 	    redirect_to post_path(@posting), notice: "El comentario ha sido creado con éxito"	
@@ -17,6 +17,6 @@ before_action :authenticate_user!
 
 	private
 	  def comments_params
-	    params.require(:comment).permit(:body,:posting_id,:user_id).merge(user: current_user) #verificado devise utiliza el helper current_user
+	    params.require(:comment).permit(:body).merge(user: current_user) #verificado devise utiliza el helper current_user
 	  end
 end
