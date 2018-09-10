@@ -224,7 +224,7 @@ DEPENDENCIES
   devise-i18n
   duktape
   jbuilder (~> 2.5)
-  pg (~> 0.18.4)
+  pg
   puma (~> 3.11)
   rails (~> 5.2.1)
   rails_12factor
