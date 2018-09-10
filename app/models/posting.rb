@@ -14,7 +14,7 @@ class Posting < ApplicationRecord
 	belongs_to :user
 	has_many :comments
 
-	validates :title,:body, presence: true, on: :create
+	validates :title,:body, presence: true#, on: :create
 	validates :title, length:{maximum:60}
 	validates :body,  length:{minimum:250}
 end
